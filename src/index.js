@@ -7,7 +7,7 @@ const MongoDBStore = require('connect-mongodb-session')(session)
 
 const app = express();
 
-const mongoURI = "mongodb+srv://movie-shop:movie-shop1234@movie-shop.f5ftv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const mongoURI = process.env.MONGO_URI
 
 const store = new MongoDBStore({
     uri: mongoURI,
