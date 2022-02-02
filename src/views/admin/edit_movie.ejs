@@ -1,0 +1,42 @@
+<%- include("../partials/adminheader") %>
+    <main class="col-md-9 col-lg-10" style="height: 100vh">
+        <div class="row justify-content-center" style="margin-top: 100px;">
+            <div class="col-6 text-center" >
+                <form action="/admin/edit-movie/<%= movie._id %>" method="POST">
+                    <h1 class="h3 mb-3 fw-normal">Edit Movie</h1>
+                    <div class="form-floating">
+                        <label for="floatingInput">Name</label>
+                        <input type="text" class="form-control" id="floatingInput" name="name" placeholder="name" value="<%= movie.name %>">
+                    </div>
+                    <div class="form-floating">
+                        <label for="floatingInput">Description</label>
+                        <input type="text" class="form-control" id="floatingInput" name="description" placeholder="about" value="<%= movie.description %>">
+                    </div>
+                    <div class="form-floating">
+                        <label for="floatingPassword">Genre</label>
+                        <select class="form-select form-control" aria-label="Default select example" name="type" value="<%= movie.type %>">
+                            <option value="action">Action</option>
+                            <option value="comedy">Comedy</option>
+                            <option value="romance">Romance</option>
+                        </select>
+                    </div>
+                    <div class="form-floating">
+                        <label for="floatingPassword">Price</label>
+                        <input type="number" class="form-control" id="floatingPassword" name="price" placeholder="$$" value="<%= movie.price %>">
+                    </div>
+                    <div class="form-floating">
+                        <label for="floatingPassword">Rating</label>
+                        <input type="text" class="form-control" id="floatingPassword" name="rating" placeholder="0-10" value="<%= movie.rating %>">
+                    </div>
+                    <div class="form-floating">
+                        <label for="floatingPassword">Image Url</label>
+                        <input type="text" class="form-control" id="floatingPassword" name="img" placeholder="link" value="<%= movie.img %>">
+                    </div>
+                    <button class="w-100 btn btn-lg btn-primary" style="margin-top: 10px;" type="submit">Save</button>
+                    <div class="a" style="margin-top: 20px;">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <%- include("../partials/adminfooter") %>
