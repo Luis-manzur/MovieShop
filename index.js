@@ -21,13 +21,13 @@ mongoose.connect(mongoURI, {
     useUnifiedTopology:true,
 });
 
-const adminRoutes = require('./routes/admin');
-const authRoutes = require('./routes/auth');
-const storeRoutes = require('./routes/store');
-const cartRoutes = require('./routes/cart');
+const adminRoutes = require('./src/routes/admin');
+const authRoutes = require('./src/routes/auth');
+const storeRoutes = require('./src/routes/store');
+const cartRoutes = require('./src/routes/cart');
 
 app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'src/views'));
 app.set('view engine', 'ejs');
 
 app.use(morgan('dev'));
