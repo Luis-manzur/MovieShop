@@ -3,8 +3,10 @@ const Schema = mongoose.Schema
 
 const Movie = mongoose.model('Movie', new Schema({
     name: String,
-    type: String,
-    rating: Number,
+    genre: String,
+    year: String,
+    duration: String,
+    rating: String,
     price: Number,
     description: String,
     img: String

@@ -5,4 +5,6 @@ router.get('/',  controller.listMovies);
 
 router.get('/genre/:genre', controller.listGenreMovies);
 
+router.get('/item/:_id', controller.item);
+
 module.exports = router

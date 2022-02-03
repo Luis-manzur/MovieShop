@@ -1,11 +1,11 @@
 <%- include("../partials/header") %>
     <div class="container">
-        <div class="row row-cols-1 row-cols-md-4 g-4" style="margin-top: 40px;">
+        <div class="row row-cols-1 row-cols-md-4 g-4" style="margin-top: 40px; margin-bottom: 40px;">
             <% for(var i = 0; i < items.length; i++) { %>
                 <div class="col">
-                    <div class="card h-100">
-                        <img src="<%= items[i].img %>"
-                            class="card-img-top" style="width: 255px; height: 367px;" ;>
+                    <div class="card h-100" style="margin-bottom: 20px;">
+                        <a href="/item/<%= items[i]._id %>"><img src="<%= items[i].img %>"
+                            class="card-img-top" style="width: 255px; height: 367px;" ;></a>
                         <div class="card-body" style="width: 100%;">
                             <h5 class="card-title"><%= items[i].name %></h5>
                             <p style="width: 100%;"><%= items[i].rating %><span class="badge bg-warning" style="margin-left: 4px;">IMDBb</span><span class="text-end" style="margin-left: 50px;">$<%= items[i].price %></span></p>

@@ -11,7 +11,21 @@ controller.listMovies = (req, res) => {
 controller.listGenreMovies = (req, res) => {
     isAdmin = checkIsAdmin(req)
     isAuth = req.session.isAuth
-    Movie.find({type: req.params.genre} ).then(movies => res.render('store/items', {items: movies, isAuth: isAuth, isAdmin: isAdmin}));
+
+    if (req.params.genre == 'action') {
+        Movie.find({genre: /Action/}).then(movies => res.render('store/items', {items: movies, isAuth: isAuth, isAdmin: isAdmin}));
+    } else if (req.params.genre == 'comedy') {
+        Movie.find({genre: /Comedy/}).then(movies => res.render('store/items', {items: movies, isAuth: isAuth, isAdmin: isAdmin}));
+    } else if (req.params.genre == 'romance') {
+        Movie.find({genre: /Romance/}).then(movies => res.render('store/items', {items: movies, isAuth: isAuth, isAdmin: isAdmin}));
+    }
+}
+
+controller.item = (req,res) => {
+    isAdmin = checkIsAdmin(req)
+    isAuth = req.session.isAuth
+
+    Movie.findById({_id: req.params._id}).then(movie => res.render('store/item', {movie: movie,  isAuth: isAuth, isAdmin: isAdmin}))
 }
 
 
